@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A300B3BE-D7A2-4F6B-88F3-34671BC05AF8}") = "PingDong.CleanArchitect.Core.Testing", "src\PingDong.CleanArchitect.Core.Testing\PingDong.CleanArchitect.Core.Testing.csproj", "{62F7ABE4-EA23-4743-929C-EFC404A4EE66}"
+EndProject
+Project("{1EF2569E-2310-4514-850F-9940A87199CA}") = "PingDong.CleanArchitect.Core.Testing.UnitTests", "src\PingDong.CleanArchitect.Core.Testing.UnitTests\PingDong.CleanArchitect.Core.Testing.UnitTests.csproj", "{DBD76DC8-D0DD-4014-8B6A-9E288623A528}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62F7ABE4-EA23-4743-929C-EFC404A4EE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F7ABE4-EA23-4743-929C-EFC404A4EE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F7ABE4-EA23-4743-929C-EFC404A4EE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F7ABE4-EA23-4743-929C-EFC404A4EE66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD76DC8-D0DD-4014-8B6A-9E288623A528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD76DC8-D0DD-4014-8B6A-9E288623A528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD76DC8-D0DD-4014-8B6A-9E288623A528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD76DC8-D0DD-4014-8B6A-9E288623A528}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E333AA7-54E5-466A-810E-60B49DEEB1D0}
+	EndGlobalSection
+EndGlobal

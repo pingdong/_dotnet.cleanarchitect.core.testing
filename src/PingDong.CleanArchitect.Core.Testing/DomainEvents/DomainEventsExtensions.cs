@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace PingDong.CleanArchitect.Core.Testing
@@ -20,7 +19,12 @@ namespace PingDong.CleanArchitect.Core.Testing
             return events.Count() == expectedCount;
         }
 
-        public static bool HasDomainEvents<T>(this Entity<T> entity, IEnumerable<Type> expectedTypes)
+        public static bool HasDomainEvents<T>(this Entity<T> entity, int expectedCount = 1)
+        {
+            return entity.DomainEvents.Count == expectedCount;
+        }
+
+        public static bool HasDomainEvents<T>(this Entity<T> entity, Type[] expectedTypes)
         {
             return expectedTypes.All(eventType => HasDomainEvent(entity, eventType));
         }

@@ -19,6 +19,12 @@ namespace PingDong.CleanArchitect.Core.Testing
             return events.Count() == expectedCount;
         }
 
+        public static string GetCorrelationId<T>(this Entity<T> entity, Type expectedType)
+        {
+            var events = entity.DomainEvents.FirstOrDefault(t => t.GetType() == expectedType);
+            return ((DomainEvent) events)?.CorrelationId;
+        }
+
         public static bool HasDomainEvents<T>(this Entity<T> entity, int expectedCount = 1)
         {
             return entity.DomainEvents.Count == expectedCount;

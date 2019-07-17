@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PingDong.CleanArchitect.Core.Testing
 {
-    public static class DomainEventsExtensions
+    public static class EntityTestExtensions
     {
         #region Domain Events
 
@@ -19,10 +19,24 @@ namespace PingDong.CleanArchitect.Core.Testing
             return events.Count() == expectedCount;
         }
 
-        public static string GetCorrelationId<T>(this Entity<T> entity, Type expectedType)
+        public static Guid GetCorrelationId<T>(this Entity<T> entity, Type expectedType)
         {
-            var events = entity.DomainEvents.FirstOrDefault(t => t.GetType() == expectedType);
-            return ((DomainEvent) events)?.CorrelationId;
+            var @event = entity.DomainEvents.FirstOrDefault(t => t.GetType() == expectedType);
+
+            if (@event == null)
+                throw new IndexOutOfRangeException($"Can't find the specified type: {expectedType}");
+
+            return @event.CorrelationId;
+        }
+
+        public static Guid GetTenantId<T>(this Entity<T> entity, Type expectedType)
+        {
+            var @event = entity.DomainEvents.FirstOrDefault(t => t.GetType() == expectedType);
+
+            if (@event == null)
+                throw new IndexOutOfRangeException($"Can't find the specified type: {expectedType}");
+
+            return @event.TenantId;
         }
 
         public static bool HasDomainEvents<T>(this Entity<T> entity, int expectedCount = 1)

@@ -19,7 +19,7 @@ namespace PingDong.CleanArchitect.Core.Testing
             return events.Count() == expectedCount;
         }
 
-        public static Guid GetCorrelationId<T>(this Entity<T> entity, Type expectedType)
+        public static string GetCorrelationId<T>(this Entity<T> entity, Type expectedType)
         {
             var @event = entity.DomainEvents.FirstOrDefault(t => t.GetType() == expectedType);
 
@@ -29,7 +29,7 @@ namespace PingDong.CleanArchitect.Core.Testing
             return @event.CorrelationId;
         }
 
-        public static Guid GetTenantId<T>(this Entity<T> entity, Type expectedType)
+        public static string GetTenantId<T>(this Entity<T> entity, Type expectedType)
         {
             var @event = entity.DomainEvents.FirstOrDefault(t => t.GetType() == expectedType);
 
